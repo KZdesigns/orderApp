@@ -1,0 +1,15 @@
+.pill {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1px 30px;
+    margin: 10px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.497);
+    color: white;
+    gap: 10px;
+}
+
+.pillItems {
+    font-size: 12px;
+}
