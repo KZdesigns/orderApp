@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50%;
+    position: relative;
+    top: -300px;
+    left: 25%;
+    background-color: rgb(74, 74, 74);
+    border-radius: 10px;
+    padding: 20px 25px 20px 25px;
+    color: whitesmoke;
+    box-shadow: 1px -1px 14px 3px rgba(0, 0, 0, 0.50);
+    text-align: center;
+}

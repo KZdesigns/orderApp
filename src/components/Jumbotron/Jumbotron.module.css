@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: -100px;
+    z-index: -1;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    clip-path: polygon(0 0, 0 90%, 100% 70%, 100% 0);
+}

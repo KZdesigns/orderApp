@@ -8,6 +8,8 @@
     background-color: rgba(0, 0, 0, 0.497);
     color: white;
     gap: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .pillItems {
