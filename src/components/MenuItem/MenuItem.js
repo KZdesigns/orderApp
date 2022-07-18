@@ -12,7 +12,7 @@ const MenuItem = (props) => {
       <div className={classes.rightSide}>
         <div className={classes.amountBox}>
           <h3 className={classes.itemHeader}>Amount</h3>
-          <input className={classes.addInput}></input>
+          <input className={classes.addInput} type="number"></input>
         </div>
         <button className={classes.addBtn}>+ Add</button>
       </div>
