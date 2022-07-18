@@ -2,10 +2,17 @@ import React from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import classes from "./Menu.module.css";
 
-const Menu = () => {
+const Menu = (props) => {
   return (
     <div className={classes.container}>
-      <MenuItem></MenuItem>
+      {props.menuItems.map((menuItem) => (
+        <MenuItem
+          name={menuItem.name}
+          description={menuItem.description}
+          cost={menuItem.cost}
+          amount={menuItem.amount}
+        />
+      ))}
     </div>
   );
 };
