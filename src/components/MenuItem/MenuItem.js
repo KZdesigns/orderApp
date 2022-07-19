@@ -2,6 +2,10 @@ import React from "react";
 import classes from "./MenuItem.module.css";
 
 const MenuItem = (props) => {
+  const onClickHanlder = () => {
+    props.onAddItem();
+  };
+
   return (
     <div className={classes.item}>
       <div className={classes.leftSide}>
@@ -18,7 +22,9 @@ const MenuItem = (props) => {
             defaultValue={props.amount}
           ></input>
         </div>
-        <button className={classes.addBtn}>+ Add</button>
+        <button className={classes.addBtn} onClick={onClickHanlder}>
+          + Add
+        </button>
       </div>
     </div>
   );
