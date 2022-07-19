@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./MenuItem.module.css";
 
 const MenuItem = (props) => {
+  const [enteredAmount, setEnteredAmount] = useState(1);
+
+  const itemAmountChangeHandler = (event) => {
+    setEnteredAmount(event.target.value);
+  };
+
   const onClickHanlder = () => {
-    props.onAddItem();
+    props.onAddItem(+enteredAmount);
+    setEnteredAmount(1);
   };
 
   return (
@@ -19,7 +26,8 @@ const MenuItem = (props) => {
           <input
             className={classes.addInput}
             type="number"
-            defaultValue={props.amount}
+            onChange={itemAmountChangeHandler}
+            value={enteredAmount}
           ></input>
         </div>
         <button className={classes.addBtn} onClick={onClickHanlder}>
