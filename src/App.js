@@ -52,6 +52,12 @@ function App() {
   const menuItems = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix];
 
   //create state for cartItems
+  const shoppingCart = [];
+
+  // need to add the ability to create shoppingCart objects in the menuItem component
+  // and be sure to add them to shopping cart array
+  // addItem handler should add the item that is create in the menuItem component to the array
+
   const [cartItems, setCartItems] = useState(0);
 
   const addItemHandler = (number) => {
