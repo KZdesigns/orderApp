@@ -55,10 +55,10 @@ function App() {
   const [cartItems, setCartItems] = useState(0);
 
   const addItemHandler = (number) => {
-    console.log("Add Item!!");
     let count = cartItems;
     count += number;
     setCartItems(count);
+    console.log("Add Item!! " + count);
   };
 
   return (
