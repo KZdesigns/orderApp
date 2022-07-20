@@ -3,12 +3,21 @@ import classes from "./Cart.module.css";
 import cartIcon from "./cartIcon.png";
 
 const Cart = (props) => {
+  let count = 0;
+
+  props.cartItems.forEach((item) => {
+    count += item.amount;
+  });
+
+  const onClickHandler = () => {
+    console.log(props.cartItems);
+  };
   return (
-    <button className={classes.pill}>
+    <button className={classes.pill} onClick={onClickHandler}>
       <img src={cartIcon} alt="shopping cart"></img>
       <p className={classes.pillItems}>Your Cart</p>
       <div className={classes.pillCountBg}>
-        <p className={classes.pillCount}>{props.cartItemCount}</p>
+        <p className={classes.pillCount}>{count}</p>
       </div>
     </button>
   );

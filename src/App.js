@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import HeaderCard from "./components/HeaderCard/HeaderCard";
 import Menu from "./components/Menu/Menu";
+import CartModal from "./components/CartModal/CartModal";
 
 function App() {
   // create menue item objects
@@ -52,24 +53,27 @@ function App() {
   const menuItems = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix];
 
   //create state for cartItems
-  const shoppingCart = [];
+  const SHOPPINGCART = [
+    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
+    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
+    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
+  ];
 
   // need to add the ability to create shoppingCart objects in the menuItem component
   // and be sure to add them to shopping cart array
   // addItem handler should add the item that is create in the menuItem component to the array
 
-  const [cartItems, setCartItems] = useState(0);
+  const [cartItems, setCartItems] = useState(SHOPPINGCART);
 
-  const addItemHandler = (number) => {
-    let count = cartItems;
-    count += number;
-    setCartItems(count);
-    console.log("Add Item!! " + count);
+  const addItemHandler = (menuItemSelected) => {
+    let items = [menuItemSelected, ...cartItems];
+    setCartItems(items);
   };
 
   return (
     <React.Fragment>
-      <Navigation cartItemCount={cartItems} />
+      <CartModal cartItems={cartItems} />
+      <Navigation cartItems={cartItems} />
       <Jumbotron />
       <HeaderCard />
       <Menu menuItems={menuItems} onAddItem={addItemHandler} />

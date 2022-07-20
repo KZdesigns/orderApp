@@ -6,7 +6,7 @@ const Navigation = (props) => {
   return (
     <nav className={classes.nav}>
       <h1 className={classes.header}>ReactMeals</h1>
-      <Cart cartItemCount={props.cartItemCount} />
+      <Cart cartItems={props.cartItems} />
     </nav>
   );
 };

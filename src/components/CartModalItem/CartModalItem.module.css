@@ -1,0 +1,9 @@
+.modalItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: rgba(0, 0, 0, 0.15) solid;
+    border-width: 1px;
+    padding-bottom: 15px;
+    padding: 1rem;
+}
