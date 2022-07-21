@@ -9,11 +9,8 @@ const Cart = (props) => {
     count += item.amount;
   });
 
-  const onClickHandler = () => {
-    console.log(props.cartItems);
-  };
   return (
-    <button className={classes.pill} onClick={onClickHandler}>
+    <button className={classes.pill} onClick={props.onConfirm}>
       <img src={cartIcon} alt="shopping cart"></img>
       <p className={classes.pillItems}>Your Cart</p>
       <div className={classes.pillCountBg}>

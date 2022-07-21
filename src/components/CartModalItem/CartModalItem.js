@@ -5,8 +5,8 @@ const CartModalItem = (props) => {
   return (
     <div className={classes.modalItem}>
       <p>{props.name}</p>
-      <p>x {props.amount}</p>
-      <p>${(props.price * props.amount).toFixed(2)}</p>
+      <p>{`x ${props.amount}`}</p>
+      <p>{`$${(props.price * props.amount).toFixed(2)}`}</p>
     </div>
   );
 };

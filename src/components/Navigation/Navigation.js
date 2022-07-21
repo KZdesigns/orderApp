@@ -6,7 +6,7 @@ const Navigation = (props) => {
   return (
     <nav className={classes.nav}>
       <h1 className={classes.header}>ReactMeals</h1>
-      <Cart cartItems={props.cartItems} />
+      <Cart cartItems={props.cartItems} onConfirm={props.onConfirm} />
     </nav>
   );
 };

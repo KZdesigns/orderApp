@@ -53,27 +53,49 @@ function App() {
   const menuItems = [itemOne, itemTwo, itemThree, itemFour, itemFive, itemSix];
 
   //create state for cartItems
-  const SHOPPINGCART = [
-    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
-    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
-    { id: Math.random().toString, name: "Sushi", amount: 2, price: 10.0 },
-  ];
+  const SHOPPINGCART = [];
 
+  let total = 0;
   // need to add the ability to create shoppingCart objects in the menuItem component
   // and be sure to add them to shopping cart array
   // addItem handler should add the item that is create in the menuItem component to the array
 
   const [cartItems, setCartItems] = useState(SHOPPINGCART);
+  const [showModal, setShowModal] = useState();
+
+  const displayModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  const order = () => {
+    setShowModal(false);
+    console.log(cartItems);
+    setCartItems([]);
+  };
 
   const addItemHandler = (menuItemSelected) => {
     let items = [menuItemSelected, ...cartItems];
     setCartItems(items);
+    total += menuItemSelected.price;
   };
 
   return (
     <React.Fragment>
-      <CartModal cartItems={cartItems} />
-      <Navigation cartItems={cartItems} />
+      {showModal ? (
+        <CartModal
+          cartItems={cartItems}
+          total={total}
+          closeModal={closeModal}
+          order={order}
+        />
+      ) : (
+        ""
+      )}
+      <Navigation cartItems={cartItems} onConfirm={displayModal} />
       <Jumbotron />
       <HeaderCard />
       <Menu menuItems={menuItems} onAddItem={addItemHandler} />
