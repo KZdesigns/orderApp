@@ -65,3 +65,14 @@
     position: relative;
     top: 1px;
 }
+
+.exit {
+    position: relative;
+    top: -3.2rem;
+    left: 40rem;
+    height: .5%;
+    width: auto;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}

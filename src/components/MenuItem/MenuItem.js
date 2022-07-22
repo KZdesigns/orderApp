@@ -11,7 +11,7 @@ const MenuItem = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const menuItemSelected = {
-      id: Math.random().toString,
+      id: Math.random().toString(),
       name: props.name,
       amount: +enteredAmount,
       price: props.cost.toFixed(2),
