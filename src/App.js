@@ -61,7 +61,7 @@ function App() {
 
   const [cartItems, setCartItems] = useState(SHOPPINGCART);
   const [showModal, setShowModal] = useState();
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0.0);
 
   const displayModal = () => {
     setShowModal(true);
@@ -76,12 +76,13 @@ function App() {
     console.log(cartItems);
     console.log(total);
     setCartItems([]);
+    setTotal(0);
   };
 
   const addItemHandler = (menuItemSelected) => {
     let items = [menuItemSelected, ...cartItems];
     setCartItems(items);
-    setTotal(total + parseInt(menuItemSelected.price));
+    setTotal(total + menuItemSelected.price * menuItemSelected.amount);
   };
 
   return (

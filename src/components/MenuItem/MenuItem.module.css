@@ -47,6 +47,11 @@
     outline: none;
 }
 
+.addBtn:active {
+    position: relative;
+    top: 1px;
+}
+
 .itemHeader {
     margin: 0;
 }

@@ -14,7 +14,7 @@ const MenuItem = (props) => {
       id: Math.random().toString(),
       name: props.name,
       amount: +enteredAmount,
-      price: props.cost.toFixed(2),
+      price: +props.cost.toFixed(2),
     };
 
     props.onAddItem(menuItemSelected);

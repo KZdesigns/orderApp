@@ -7,8 +7,7 @@ const CartModal = (props) => {
     <div className={classes.modalBackground}>
       <div className={classes.modalCard}>
         <div className={classes.header}>
-          <p>Order Item</p>
-          <p className={classes.middleItem}>Amount</p>
+          <p>Order Item x Amount</p>
           <p>Total</p>
         </div>
         {props.cartItems.map((cartItem) => (
